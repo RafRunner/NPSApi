@@ -1,9 +1,9 @@
 import 'reflect-metadata';
-import express, { Response, Request, Server } from 'express';
+import express, { Express } from 'express';
 import './database';
 import { router } from './routes'
 
-const app: Server = express();
+const app: Express = express();
 const port: Number = 3333;
 
 app.use(express.json());

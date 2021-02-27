@@ -25,7 +25,7 @@ export class CreateSurveys1614312568941 implements MigrationInterface {
                         type: 'timestamp',
                         default: 'now()',
                     },
-                ]
+                ],
             })
         );
     }

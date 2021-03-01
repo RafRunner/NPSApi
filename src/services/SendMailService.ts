@@ -1,9 +1,6 @@
 import nodemailer, { Transporter } from 'nodemailer';
-import { resolve } from 'path';
 import handlebars from 'handlebars';
 import fs from 'fs';
-import { User } from '../models/User';
-import { Survey } from '../models/Survey';
 
 class SendMailService {
 

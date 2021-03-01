@@ -5,7 +5,7 @@ import { SurveyAnswerRepository } from "../repositories/SurveyAnswerRepository";
 
 class NpsController {
 	async show(request: Request, response: Response) {
-		const survey_id = String(request.params);
+		const survey_id = String(request.params.survey_id);
 
 		const surveyAnswerRepository =  getCustomRepository(SurveyAnswerRepository);
 
@@ -33,4 +33,4 @@ class NpsController {
 	}
 }
 
-export { NpsController };
+export default new NpsController();

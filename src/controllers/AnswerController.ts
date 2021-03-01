@@ -22,4 +22,4 @@ class AnswerController {
 	}
 }
 
-export { AnswerController };
+export default new AnswerController();

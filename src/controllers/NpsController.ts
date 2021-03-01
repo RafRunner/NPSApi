@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { getCustomRepository, Not, IsNull } from "typeorm";
+import { RequestError } from "../errors/RequestError";
 import { SurveyAnswerRepository } from "../repositories/SurveyAnswerRepository";
 
 class NpsController {
@@ -13,9 +14,7 @@ class NpsController {
 			value: Not(IsNull()),
 		});
 		if (answers.length === 0) {
-			return response.status(400).json({
-				error: 'Survey does not exist or has no answes'
-			});
+			throw new RequestError('Survey does not exist or has no answes');
 		}
 
 		const detractors = answers.filter(answer => answer.value <= 6).length;
